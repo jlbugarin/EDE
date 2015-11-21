@@ -21,7 +21,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
 @ManagedBean(name = "userRolesController")
-@RequestScoped
+@SessionScoped
 public class UserRolesController implements Serializable {
 
     @EJB
@@ -81,8 +81,8 @@ public class UserRolesController implements Serializable {
         }
         return items;
     }
-
-    private void persist(PersistAction persistAction, String successMessage) {
+    
+       private void persist(PersistAction persistAction, String successMessage) {
         if (selected != null) {
             setEmbeddableKeys();
             try {

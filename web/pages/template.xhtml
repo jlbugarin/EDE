@@ -24,7 +24,7 @@
                             <p:menuitem value="UserRoles" outcome="/pages/maestros/userRoles/List.xhtml" />
                             <p:menuitem value="Users" outcome="/pages/maestros/users/List.xhtml" />
                         </p:submenu>
-                        <p:menuitem value="#{bundle.Login}" outcome="/index" icon="ui-icon-home"/>                      
+                        <p:menuitem value="#{bundle.Logout}" action="#{loginManagedBean.logout()}" />                      
                     </p:menubar>
                 </h:form>
             </p:layoutUnit>

@@ -21,7 +21,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
 @ManagedBean(name = "usersController")
-@RequestScoped
+@SessionScoped
 public class UsersController implements Serializable {
 
     @EJB
