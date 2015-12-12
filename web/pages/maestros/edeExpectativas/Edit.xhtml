@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeExpectativasEditDlg" widgetVar="EdeExpectativasEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEdeExpectativasTitle}">
+            <h:form id="EdeExpectativasEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeExpectativasController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_edeExpectativasPK_item}" for="edeExpectativasPK_item" />
+                        <p:inputText id="edeExpectativasPK_item" value="#{edeExpectativasController.selected.edeExpectativasPK.item}" title="#{bundle.EditEdeExpectativasTitle_edeExpectativasPK_item}" required="true" requiredMessage="#{bundle.EditEdeExpectativasRequiredMessage_edeExpectativasPK_item}"/>
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_edeExpectativasPK_idEvaluacion}" for="edeExpectativasPK_idEvaluacion" />
+                        <p:inputText id="edeExpectativasPK_idEvaluacion" value="#{edeExpectativasController.selected.edeExpectativasPK.idEvaluacion}" title="#{bundle.EditEdeExpectativasTitle_edeExpectativasPK_idEvaluacion}" required="true" requiredMessage="#{bundle.EditEdeExpectativasRequiredMessage_edeExpectativasPK_idEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_expecDelEvaluado}" for="expecDelEvaluado" />
+                        <p:inputText id="expecDelEvaluado" value="#{edeExpectativasController.selected.expecDelEvaluado}" title="#{bundle.EditEdeExpectativasTitle_expecDelEvaluado}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_expecSobreEvaluado}" for="expecSobreEvaluado" />
+                        <p:inputText id="expecSobreEvaluado" value="#{edeExpectativasController.selected.expecSobreEvaluado}" title="#{bundle.EditEdeExpectativasTitle_expecSobreEvaluado}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_expecSobreEquipo}" for="expecSobreEquipo" />
+                        <p:inputText id="expecSobreEquipo" value="#{edeExpectativasController.selected.expecSobreEquipo}" title="#{bundle.EditEdeExpectativasTitle_expecSobreEquipo}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_logros}" for="logros" />
+                        <p:inputText id="logros" value="#{edeExpectativasController.selected.logros}" title="#{bundle.EditEdeExpectativasTitle_logros}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_conocimientoClave}" for="conocimientoClave" />
+                        <p:inputText id="conocimientoClave" value="#{edeExpectativasController.selected.conocimientoClave}" title="#{bundle.EditEdeExpectativasTitle_conocimientoClave}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_fortalezasArea}" for="fortalezasArea" />
+                        <p:inputText id="fortalezasArea" value="#{edeExpectativasController.selected.fortalezasArea}" title="#{bundle.EditEdeExpectativasTitle_fortalezasArea}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_oportunidadesArea}" for="oportunidadesArea" />
+                        <p:inputText id="oportunidadesArea" value="#{edeExpectativasController.selected.oportunidadesArea}" title="#{bundle.EditEdeExpectativasTitle_oportunidadesArea}" />
+                        <p:outputLabel value="#{bundle.EditEdeExpectativasLabel_comentarios}" for="comentarios" />
+                        <p:inputText id="comentarios" value="#{edeExpectativasController.selected.comentarios}" title="#{bundle.EditEdeExpectativasTitle_comentarios}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edeExpectativasController.update}" value="#{bundle.Save}" update="display,:EdeExpectativasListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EdeExpectativasEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdeExpectativasEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

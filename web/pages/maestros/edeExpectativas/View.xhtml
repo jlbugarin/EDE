@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeExpectativasViewDlg" widgetVar="EdeExpectativasViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEdeExpectativasTitle}">
+            <h:form id="EdeExpectativasViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeExpectativasController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_edeExpectativasPK_item}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.edeExpectativasPK.item}" title="#{bundle.ViewEdeExpectativasTitle_edeExpectativasPK_item}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_edeExpectativasPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.edeExpectativasPK.idEvaluacion}" title="#{bundle.ViewEdeExpectativasTitle_edeExpectativasPK_idEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_expecDelEvaluado}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.expecDelEvaluado}" title="#{bundle.ViewEdeExpectativasTitle_expecDelEvaluado}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_expecSobreEvaluado}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.expecSobreEvaluado}" title="#{bundle.ViewEdeExpectativasTitle_expecSobreEvaluado}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_expecSobreEquipo}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.expecSobreEquipo}" title="#{bundle.ViewEdeExpectativasTitle_expecSobreEquipo}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_logros}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.logros}" title="#{bundle.ViewEdeExpectativasTitle_logros}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_conocimientoClave}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.conocimientoClave}" title="#{bundle.ViewEdeExpectativasTitle_conocimientoClave}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_fortalezasArea}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.fortalezasArea}" title="#{bundle.ViewEdeExpectativasTitle_fortalezasArea}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_oportunidadesArea}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.oportunidadesArea}" title="#{bundle.ViewEdeExpectativasTitle_oportunidadesArea}"/>
+                        <h:outputText value="#{bundle.ViewEdeExpectativasLabel_comentarios}"/>
+                        <h:outputText value="#{edeExpectativasController.selected.comentarios}" title="#{bundle.ViewEdeExpectativasTitle_comentarios}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EdeExpectativasViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

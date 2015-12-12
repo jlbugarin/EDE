@@ -24,6 +24,13 @@
                         <p:submenu rendered="#{loginManagedBean.signed==true}"  label="#{bundle.Maintenance}" >
                             <p:menuitem value="UserRoles" outcome="/pages/maestros/userRoles/List.xhtml" />
                             <p:menuitem value="Users" outcome="/pages/maestros/users/List.xhtml" />
+                            <p:menuitem value="EdeCompetencias" outcome="/pages/maestros/edeCompetencias/List.xhtml" />
+                            <p:menuitem value="EdeCompromisos" outcome="/pages/maestros/edeCompromisos/List.xhtml" />
+                            <p:menuitem value="EdeEval" outcome="/pages/maestros/edeEval/List.xhtml" />
+                            <p:menuitem value="EdeExpectativas" outcome="/pages/maestros/edeExpectativas/List.xhtml" />
+                            <p:menuitem value="EdeFortalezas" outcome="/pages/maestros/edeFortalezas/List.xhtml" />
+                            <p:menuitem value="EdeObjetivos" outcome="/pages/maestros/edeObjetivos/List.xhtml" />
+                            <p:menuitem value="EdeOportunidades" outcome="/pages/maestros/edeOportunidades/List.xhtml" />
                         </p:submenu>
                         <p:submenu rendered="#{loginManagedBean.signed==true}"  label="#{bundle.Evaluacion}" >
                             <p:menuitem value="Objetivos" outcome="/pages/maestros/userRoles/List.xhtml" />
@@ -31,7 +38,8 @@
                         </p:submenu>
                        
                         <f:facet name="options">
-                           
+                            <p:outputLabel style="margin-right:10px" value="Bienvenido "/>
+                            <p:outputLabel style="margin-right:10px" value="#{loginManagedBean.usuario}"/>
                             <p:commandButton type="button" action="#{loginManagedBean.logout()}" value="#{bundle.Logout}" icon="ui-icon-extlink" />
                         </f:facet>
                     </p:menubar>

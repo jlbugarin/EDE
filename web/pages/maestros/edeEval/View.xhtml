@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeEvalViewDlg" widgetVar="EdeEvalViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEdeEvalTitle}">
+            <h:form id="EdeEvalViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeEvalController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_edeEvalPK_rolEvaluacion}"/>
+                        <h:outputText value="#{edeEvalController.selected.edeEvalPK.rolEvaluacion}" title="#{bundle.ViewEdeEvalTitle_edeEvalPK_rolEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_edeEvalPK_tipoEvaluacion}"/>
+                        <h:outputText value="#{edeEvalController.selected.edeEvalPK.tipoEvaluacion}" title="#{bundle.ViewEdeEvalTitle_edeEvalPK_tipoEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_edeEvalPK_codEvaluador}"/>
+                        <h:outputText value="#{edeEvalController.selected.edeEvalPK.codEvaluador}" title="#{bundle.ViewEdeEvalTitle_edeEvalPK_codEvaluador}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_edeEvalPK_codEvaluado}"/>
+                        <h:outputText value="#{edeEvalController.selected.edeEvalPK.codEvaluado}" title="#{bundle.ViewEdeEvalTitle_edeEvalPK_codEvaluado}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_edeEvalPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeEvalController.selected.edeEvalPK.idEvaluacion}" title="#{bundle.ViewEdeEvalTitle_edeEvalPK_idEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_nombresEvaluador}"/>
+                        <h:outputText value="#{edeEvalController.selected.nombresEvaluador}" title="#{bundle.ViewEdeEvalTitle_nombresEvaluador}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_posicionEvaluador}"/>
+                        <h:outputText value="#{edeEvalController.selected.posicionEvaluador}" title="#{bundle.ViewEdeEvalTitle_posicionEvaluador}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_nombreEvaluado}"/>
+                        <h:outputText value="#{edeEvalController.selected.nombreEvaluado}" title="#{bundle.ViewEdeEvalTitle_nombreEvaluado}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_posicionEvaluado}"/>
+                        <h:outputText value="#{edeEvalController.selected.posicionEvaluado}" title="#{bundle.ViewEdeEvalTitle_posicionEvaluado}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_tipoEmpleado}"/>
+                        <h:outputText value="#{edeEvalController.selected.tipoEmpleado}" title="#{bundle.ViewEdeEvalTitle_tipoEmpleado}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_fechaIngresoEvaluado}"/>
+                        <h:outputText value="#{edeEvalController.selected.fechaIngresoEvaluado}" title="#{bundle.ViewEdeEvalTitle_fechaIngresoEvaluado}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numDefiObjetivos}"/>
+                        <h:outputText value="#{edeEvalController.selected.numDefiObjetivos}" title="#{bundle.ViewEdeEvalTitle_numDefiObjetivos}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numDefiCompromisos}"/>
+                        <h:outputText value="#{edeEvalController.selected.numDefiCompromisos}" title="#{bundle.ViewEdeEvalTitle_numDefiCompromisos}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_estadoDefi}"/>
+                        <h:outputText value="#{edeEvalController.selected.estadoDefi}" title="#{bundle.ViewEdeEvalTitle_estadoDefi}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numReIntObjetivos}"/>
+                        <h:outputText value="#{edeEvalController.selected.numReIntObjetivos}" title="#{bundle.ViewEdeEvalTitle_numReIntObjetivos}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numReIntCompromisos}"/>
+                        <h:outputText value="#{edeEvalController.selected.numReIntCompromisos}" title="#{bundle.ViewEdeEvalTitle_numReIntCompromisos}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_estadoReInt}"/>
+                        <h:outputText value="#{edeEvalController.selected.estadoReInt}" title="#{bundle.ViewEdeEvalTitle_estadoReInt}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numReFinObjetivos}"/>
+                        <h:outputText value="#{edeEvalController.selected.numReFinObjetivos}" title="#{bundle.ViewEdeEvalTitle_numReFinObjetivos}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numReFinCompromisos}"/>
+                        <h:outputText value="#{edeEvalController.selected.numReFinCompromisos}" title="#{bundle.ViewEdeEvalTitle_numReFinCompromisos}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_estadoEval}"/>
+                        <h:outputText value="#{edeEvalController.selected.estadoEval}" title="#{bundle.ViewEdeEvalTitle_estadoEval}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_estadoCompe}"/>
+                        <h:outputText value="#{edeEvalController.selected.estadoCompe}" title="#{bundle.ViewEdeEvalTitle_estadoCompe}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numEvaForta}"/>
+                        <h:outputText value="#{edeEvalController.selected.numEvaForta}" title="#{bundle.ViewEdeEvalTitle_numEvaForta}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_numEvaOpor}"/>
+                        <h:outputText value="#{edeEvalController.selected.numEvaOpor}" title="#{bundle.ViewEdeEvalTitle_numEvaOpor}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_estadoEvaForta}"/>
+                        <h:outputText value="#{edeEvalController.selected.estadoEvaForta}" title="#{bundle.ViewEdeEvalTitle_estadoEvaForta}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_revIntermediaCompromiso}"/>
+                        <h:outputText value="#{edeEvalController.selected.revIntermediaCompromiso}" title="#{bundle.ViewEdeEvalTitle_revIntermediaCompromiso}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_revIntermediaExpectativa}"/>
+                        <h:outputText value="#{edeEvalController.selected.revIntermediaExpectativa}" title="#{bundle.ViewEdeEvalTitle_revIntermediaExpectativa}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_revFinalCompromiso}"/>
+                        <h:outputText value="#{edeEvalController.selected.revFinalCompromiso}" title="#{bundle.ViewEdeEvalTitle_revFinalCompromiso}"/>
+                        <h:outputText value="#{bundle.ViewEdeEvalLabel_revFinalExpectativa}"/>
+                        <h:outputText value="#{edeEvalController.selected.revFinalExpectativa}" title="#{bundle.ViewEdeEvalTitle_revFinalExpectativa}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EdeEvalViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

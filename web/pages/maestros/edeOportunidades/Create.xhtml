@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeOportunidadesCreateDlg" widgetVar="EdeOportunidadesCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEdeOportunidadesTitle}">
+            <h:form id="EdeOportunidadesCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeOportunidadesController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEdeOportunidadesLabel_edeOportunidadesPK_item}" for="edeOportunidadesPK_item" />
+                        <p:inputText id="edeOportunidadesPK_item" value="#{edeOportunidadesController.selected.edeOportunidadesPK.item}" title="#{bundle.CreateEdeOportunidadesTitle_edeOportunidadesPK_item}" required="true" requiredMessage="#{bundle.CreateEdeOportunidadesRequiredMessage_edeOportunidadesPK_item}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeOportunidadesLabel_edeOportunidadesPK_idEvaluacion}" for="edeOportunidadesPK_idEvaluacion" />
+                        <p:inputText id="edeOportunidadesPK_idEvaluacion" value="#{edeOportunidadesController.selected.edeOportunidadesPK.idEvaluacion}" title="#{bundle.CreateEdeOportunidadesTitle_edeOportunidadesPK_idEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeOportunidadesRequiredMessage_edeOportunidadesPK_idEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeOportunidadesLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edeOportunidadesController.selected.descripcion}" title="#{bundle.CreateEdeOportunidadesTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edeOportunidadesController.create}" value="#{bundle.Save}" update="display,:EdeOportunidadesListForm:datalist,:growl" oncomplete="handleSubmit(args,'EdeOportunidadesCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdeOportunidadesCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

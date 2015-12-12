@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeCompetenciasViewDlg" widgetVar="EdeCompetenciasViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEdeCompetenciasTitle}">
+            <h:form id="EdeCompetenciasViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeCompetenciasController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEdeCompetenciasLabel_edeCompetenciasPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeCompetenciasController.selected.edeCompetenciasPK.idEvaluacion}" title="#{bundle.ViewEdeCompetenciasTitle_edeCompetenciasPK_idEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompetenciasLabel_edeCompetenciasPK_item}"/>
+                        <h:outputText value="#{edeCompetenciasController.selected.edeCompetenciasPK.item}" title="#{bundle.ViewEdeCompetenciasTitle_edeCompetenciasPK_item}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompetenciasLabel_codPregunta}"/>
+                        <h:outputText value="#{edeCompetenciasController.selected.codPregunta}" title="#{bundle.ViewEdeCompetenciasTitle_codPregunta}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompetenciasLabel_codRespuesta}"/>
+                        <h:outputText value="#{edeCompetenciasController.selected.codRespuesta}" title="#{bundle.ViewEdeCompetenciasTitle_codRespuesta}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompetenciasLabel_comportamientoIdent}"/>
+                        <h:outputText value="#{edeCompetenciasController.selected.comportamientoIdent}" title="#{bundle.ViewEdeCompetenciasTitle_comportamientoIdent}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EdeCompetenciasViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

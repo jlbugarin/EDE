@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/pages/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEdeExpectativasTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="EdeExpectativasListForm">
+                <p:panel header="#{bundle.ListEdeExpectativasTitle}">
+                    <p:dataTable id="datalist" value="#{edeExpectativasController.items}" var="item"
+                                 selectionMode="single" selection="#{edeExpectativasController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.edeExpectativasPK}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_edeExpectativasPK_item}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeExpectativasPK.item}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_edeExpectativasPK_idEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeExpectativasPK.idEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_expecDelEvaluado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.expecDelEvaluado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_expecSobreEvaluado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.expecSobreEvaluado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_expecSobreEquipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.expecSobreEquipo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_logros}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.logros}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_conocimientoClave}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.conocimientoClave}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_fortalezasArea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fortalezasArea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_oportunidadesArea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.oportunidadesArea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeExpectativasTitle_comentarios}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comentarios}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{edeExpectativasController.prepareCreate}" update=":EdeExpectativasCreateForm" oncomplete="PF('EdeExpectativasCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EdeExpectativasViewForm" oncomplete="PF('EdeExpectativasViewDialog').show()" disabled="#{empty edeExpectativasController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":EdeExpectativasEditForm" oncomplete="PF('EdeExpectativasEditDialog').show()" disabled="#{empty edeExpectativasController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{edeExpectativasController.destroy}" update=":growl,datalist" disabled="#{empty edeExpectativasController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeObjetivosEditDlg" widgetVar="EdeObjetivosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEdeObjetivosTitle}">
+            <h:form id="EdeObjetivosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeObjetivosController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}" for="edeObjetivosPK_idEvaluacion" />
+                        <p:inputText id="edeObjetivosPK_idEvaluacion" value="#{edeObjetivosController.selected.edeObjetivosPK.idEvaluacion}" title="#{bundle.EditEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}" required="true" requiredMessage="#{bundle.EditEdeObjetivosRequiredMessage_edeObjetivosPK_idEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_edeObjetivosPK_item}" for="edeObjetivosPK_item" />
+                        <p:inputText id="edeObjetivosPK_item" value="#{edeObjetivosController.selected.edeObjetivosPK.item}" title="#{bundle.EditEdeObjetivosTitle_edeObjetivosPK_item}" required="true" requiredMessage="#{bundle.EditEdeObjetivosRequiredMessage_edeObjetivosPK_item}"/>
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_codCategoria}" for="codCategoria" />
+                        <p:inputText id="codCategoria" value="#{edeObjetivosController.selected.codCategoria}" title="#{bundle.EditEdeObjetivosTitle_codCategoria}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_porPeso}" for="porPeso" />
+                        <p:inputText id="porPeso" value="#{edeObjetivosController.selected.porPeso}" title="#{bundle.EditEdeObjetivosTitle_porPeso}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_definicionObjetivo}" for="definicionObjetivo" />
+                        <p:inputText id="definicionObjetivo" value="#{edeObjetivosController.selected.definicionObjetivo}" title="#{bundle.EditEdeObjetivosTitle_definicionObjetivo}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_nombreIndicador}" for="nombreIndicador" />
+                        <p:inputText id="nombreIndicador" value="#{edeObjetivosController.selected.nombreIndicador}" title="#{bundle.EditEdeObjetivosTitle_nombreIndicador}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_unidad}" for="unidad" />
+                        <p:inputText id="unidad" value="#{edeObjetivosController.selected.unidad}" title="#{bundle.EditEdeObjetivosTitle_unidad}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_tipo}" for="tipo" />
+                        <p:inputText id="tipo" value="#{edeObjetivosController.selected.tipo}" title="#{bundle.EditEdeObjetivosTitle_tipo}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_fuenteValidacion}" for="fuenteValidacion" />
+                        <p:inputText id="fuenteValidacion" value="#{edeObjetivosController.selected.fuenteValidacion}" title="#{bundle.EditEdeObjetivosTitle_fuenteValidacion}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_metaMinimo}" for="metaMinimo" />
+                        <p:inputText id="metaMinimo" value="#{edeObjetivosController.selected.metaMinimo}" title="#{bundle.EditEdeObjetivosTitle_metaMinimo}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_metaMaximo}" for="metaMaximo" />
+                        <p:inputText id="metaMaximo" value="#{edeObjetivosController.selected.metaMaximo}" title="#{bundle.EditEdeObjetivosTitle_metaMaximo}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_presiciones}" for="presiciones" />
+                        <p:inputText id="presiciones" value="#{edeObjetivosController.selected.presiciones}" title="#{bundle.EditEdeObjetivosTitle_presiciones}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_escalaMinMeta}" for="escalaMinMeta" />
+                        <p:inputText id="escalaMinMeta" value="#{edeObjetivosController.selected.escalaMinMeta}" title="#{bundle.EditEdeObjetivosTitle_escalaMinMeta}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_escalaMeta}" for="escalaMeta" />
+                        <p:inputText id="escalaMeta" value="#{edeObjetivosController.selected.escalaMeta}" title="#{bundle.EditEdeObjetivosTitle_escalaMeta}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_escalaMaxMeta}" for="escalaMaxMeta" />
+                        <p:inputText id="escalaMaxMeta" value="#{edeObjetivosController.selected.escalaMaxMeta}" title="#{bundle.EditEdeObjetivosTitle_escalaMaxMeta}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_porAvanceRevIntermedia}" for="porAvanceRevIntermedia" />
+                        <p:inputText id="porAvanceRevIntermedia" value="#{edeObjetivosController.selected.porAvanceRevIntermedia}" title="#{bundle.EditEdeObjetivosTitle_porAvanceRevIntermedia}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_comentarioRevIntermedia}" for="comentarioRevIntermedia" />
+                        <p:inputText id="comentarioRevIntermedia" value="#{edeObjetivosController.selected.comentarioRevIntermedia}" title="#{bundle.EditEdeObjetivosTitle_comentarioRevIntermedia}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_indRevObjetivosIntermedia}" for="indRevObjetivosIntermedia" />
+                        <p:inputText id="indRevObjetivosIntermedia" value="#{edeObjetivosController.selected.indRevObjetivosIntermedia}" title="#{bundle.EditEdeObjetivosTitle_indRevObjetivosIntermedia}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_porAvanceRevFinal}" for="porAvanceRevFinal" />
+                        <p:inputText id="porAvanceRevFinal" value="#{edeObjetivosController.selected.porAvanceRevFinal}" title="#{bundle.EditEdeObjetivosTitle_porAvanceRevFinal}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_comentarioRevFinal}" for="comentarioRevFinal" />
+                        <p:inputText id="comentarioRevFinal" value="#{edeObjetivosController.selected.comentarioRevFinal}" title="#{bundle.EditEdeObjetivosTitle_comentarioRevFinal}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_indRevObjetivosFinal}" for="indRevObjetivosFinal" />
+                        <p:inputText id="indRevObjetivosFinal" value="#{edeObjetivosController.selected.indRevObjetivosFinal}" title="#{bundle.EditEdeObjetivosTitle_indRevObjetivosFinal}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_resultado}" for="resultado" />
+                        <p:inputText id="resultado" value="#{edeObjetivosController.selected.resultado}" title="#{bundle.EditEdeObjetivosTitle_resultado}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_porCumplimiento}" for="porCumplimiento" />
+                        <p:inputText id="porCumplimiento" value="#{edeObjetivosController.selected.porCumplimiento}" title="#{bundle.EditEdeObjetivosTitle_porCumplimiento}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_logroporPeso}" for="logroporPeso" />
+                        <p:inputText id="logroporPeso" value="#{edeObjetivosController.selected.logroporPeso}" title="#{bundle.EditEdeObjetivosTitle_logroporPeso}" />
+                        <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_comentarioEvaluacion}" for="comentarioEvaluacion" />
+                        <p:inputText id="comentarioEvaluacion" value="#{edeObjetivosController.selected.comentarioEvaluacion}" title="#{bundle.EditEdeObjetivosTitle_comentarioEvaluacion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edeObjetivosController.update}" value="#{bundle.Save}" update="display,:EdeObjetivosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EdeObjetivosEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdeObjetivosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

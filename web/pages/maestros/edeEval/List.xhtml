@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/pages/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEdeEvalTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="EdeEvalListForm">
+                <p:panel header="#{bundle.ListEdeEvalTitle}">
+                    <p:dataTable id="datalist" value="#{edeEvalController.items}" var="item"
+                                 selectionMode="single" selection="#{edeEvalController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.edeEvalPK}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_codEvaluador}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeEvalPK.codEvaluador}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_rolEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeEvalPK.rolEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_codEvaluado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeEvalPK.codEvaluado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_tipoEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeEvalPK.tipoEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_idEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeEvalPK.idEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_nombresEvaluador}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombresEvaluador}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_posicionEvaluador}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.posicionEvaluador}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_nombreEvaluado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreEvaluado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_posicionEvaluado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.posicionEvaluado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_tipoEmpleado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoEmpleado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_fechaIngresoEvaluado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaIngresoEvaluado}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numDefiObjetivos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numDefiObjetivos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numDefiCompromisos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numDefiCompromisos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_estadoDefi}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoDefi}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numReIntObjetivos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numReIntObjetivos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numReIntCompromisos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numReIntCompromisos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_estadoReInt}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoReInt}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numReFinObjetivos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numReFinObjetivos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numReFinCompromisos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numReFinCompromisos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_estadoEval}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoEval}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_estadoCompe}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoCompe}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numEvaForta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numEvaForta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_numEvaOpor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numEvaOpor}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_estadoEvaForta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoEvaForta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_revIntermediaCompromiso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.revIntermediaCompromiso}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_revIntermediaExpectativa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.revIntermediaExpectativa}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_revFinalCompromiso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.revFinalCompromiso}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_revFinalExpectativa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.revFinalExpectativa}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{edeEvalController.prepareCreate}" update=":EdeEvalCreateForm" oncomplete="PF('EdeEvalCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EdeEvalViewForm" oncomplete="PF('EdeEvalViewDialog').show()" disabled="#{empty edeEvalController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":EdeEvalEditForm" oncomplete="PF('EdeEvalEditDialog').show()" disabled="#{empty edeEvalController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{edeEvalController.destroy}" update=":growl,datalist" disabled="#{empty edeEvalController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

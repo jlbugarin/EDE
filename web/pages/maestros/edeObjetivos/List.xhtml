@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/pages/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEdeObjetivosTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="EdeObjetivosListForm">
+                <p:panel header="#{bundle.ListEdeObjetivosTitle}">
+                    <p:dataTable id="datalist" value="#{edeObjetivosController.items}" var="item"
+                                 selectionMode="single" selection="#{edeObjetivosController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.edeObjetivosPK}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_edeObjetivosPK_item}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeObjetivosPK.item}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeObjetivosPK.idEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_codCategoria}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codCategoria}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_porPeso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porPeso}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_definicionObjetivo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.definicionObjetivo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_nombreIndicador}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreIndicador}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_unidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.unidad}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_tipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_fuenteValidacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fuenteValidacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_metaMinimo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.metaMinimo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_metaMaximo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.metaMaximo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_presiciones}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.presiciones}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMinMeta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaMinMeta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMeta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaMeta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMaxMeta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaMaxMeta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_porAvanceRevIntermedia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porAvanceRevIntermedia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_comentarioRevIntermedia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comentarioRevIntermedia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_indRevObjetivosIntermedia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indRevObjetivosIntermedia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_porAvanceRevFinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porAvanceRevFinal}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_comentarioRevFinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comentarioRevFinal}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_indRevObjetivosFinal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indRevObjetivosFinal}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_resultado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.resultado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_porCumplimiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porCumplimiento}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_logroporPeso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.logroporPeso}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_comentarioEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comentarioEvaluacion}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{edeObjetivosController.prepareCreate}" update=":EdeObjetivosCreateForm" oncomplete="PF('EdeObjetivosCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EdeObjetivosViewForm" oncomplete="PF('EdeObjetivosViewDialog').show()" disabled="#{empty edeObjetivosController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":EdeObjetivosEditForm" oncomplete="PF('EdeObjetivosEditDialog').show()" disabled="#{empty edeObjetivosController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{edeObjetivosController.destroy}" update=":growl,datalist" disabled="#{empty edeObjetivosController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

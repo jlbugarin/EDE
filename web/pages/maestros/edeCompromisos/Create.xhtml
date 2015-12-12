@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeCompromisosCreateDlg" widgetVar="EdeCompromisosCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEdeCompromisosTitle}">
+            <h:form id="EdeCompromisosCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeCompromisosController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_edeCompromisosPK_idEvaluacion}" for="edeCompromisosPK_idEvaluacion" />
+                        <p:inputText id="edeCompromisosPK_idEvaluacion" value="#{edeCompromisosController.selected.edeCompromisosPK.idEvaluacion}" title="#{bundle.CreateEdeCompromisosTitle_edeCompromisosPK_idEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeCompromisosRequiredMessage_edeCompromisosPK_idEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_edeCompromisosPK_item}" for="edeCompromisosPK_item" />
+                        <p:inputText id="edeCompromisosPK_item" value="#{edeCompromisosController.selected.edeCompromisosPK.item}" title="#{bundle.CreateEdeCompromisosTitle_edeCompromisosPK_item}" required="true" requiredMessage="#{bundle.CreateEdeCompromisosRequiredMessage_edeCompromisosPK_item}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edeCompromisosController.selected.descripcion}" title="#{bundle.CreateEdeCompromisosTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_periodo}" for="periodo" />
+                        <p:inputText id="periodo" value="#{edeCompromisosController.selected.periodo}" title="#{bundle.CreateEdeCompromisosTitle_periodo}" />
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_fechaFinal}" for="fechaFinal" />
+                        <p:calendar id="fechaFinal" pattern="MM/dd/yyyy" value="#{edeCompromisosController.selected.fechaFinal}" title="#{bundle.EditEdeCompromisosTitle_fechaFinal}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_codNivelEva}" for="codNivelEva" />
+                        <p:inputText id="codNivelEva" value="#{edeCompromisosController.selected.codNivelEva}" title="#{bundle.CreateEdeCompromisosTitle_codNivelEva}" />
+                        <p:outputLabel value="#{bundle.CreateEdeCompromisosLabel_comentarioEvaluacion}" for="comentarioEvaluacion" />
+                        <p:inputText id="comentarioEvaluacion" value="#{edeCompromisosController.selected.comentarioEvaluacion}" title="#{bundle.CreateEdeCompromisosTitle_comentarioEvaluacion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edeCompromisosController.create}" value="#{bundle.Save}" update="display,:EdeCompromisosListForm:datalist,:growl" oncomplete="handleSubmit(args,'EdeCompromisosCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdeCompromisosCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

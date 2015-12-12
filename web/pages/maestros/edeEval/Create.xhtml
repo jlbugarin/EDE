@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeEvalCreateDlg" widgetVar="EdeEvalCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEdeEvalTitle}">
+            <h:form id="EdeEvalCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeEvalController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_rolEvaluacion}" for="edeEvalPK_rolEvaluacion" />
+                        <p:inputText id="edeEvalPK_rolEvaluacion" value="#{edeEvalController.selected.edeEvalPK.rolEvaluacion}" title="#{bundle.CreateEdeEvalTitle_edeEvalPK_rolEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeEvalRequiredMessage_edeEvalPK_rolEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_tipoEvaluacion}" for="edeEvalPK_tipoEvaluacion" />
+                        <p:inputText id="edeEvalPK_tipoEvaluacion" value="#{edeEvalController.selected.edeEvalPK.tipoEvaluacion}" title="#{bundle.CreateEdeEvalTitle_edeEvalPK_tipoEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeEvalRequiredMessage_edeEvalPK_tipoEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_codEvaluador}" for="edeEvalPK_codEvaluador" />
+                        <p:inputText id="edeEvalPK_codEvaluador" value="#{edeEvalController.selected.edeEvalPK.codEvaluador}" title="#{bundle.CreateEdeEvalTitle_edeEvalPK_codEvaluador}" required="true" requiredMessage="#{bundle.CreateEdeEvalRequiredMessage_edeEvalPK_codEvaluador}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_codEvaluado}" for="edeEvalPK_codEvaluado" />
+                        <p:inputText id="edeEvalPK_codEvaluado" value="#{edeEvalController.selected.edeEvalPK.codEvaluado}" title="#{bundle.CreateEdeEvalTitle_edeEvalPK_codEvaluado}" required="true" requiredMessage="#{bundle.CreateEdeEvalRequiredMessage_edeEvalPK_codEvaluado}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_idEvaluacion}" for="edeEvalPK_idEvaluacion" />
+                        <p:inputText id="edeEvalPK_idEvaluacion" value="#{edeEvalController.selected.edeEvalPK.idEvaluacion}" title="#{bundle.CreateEdeEvalTitle_edeEvalPK_idEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeEvalRequiredMessage_edeEvalPK_idEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_nombresEvaluador}" for="nombresEvaluador" />
+                        <p:inputText id="nombresEvaluador" value="#{edeEvalController.selected.nombresEvaluador}" title="#{bundle.CreateEdeEvalTitle_nombresEvaluador}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_posicionEvaluador}" for="posicionEvaluador" />
+                        <p:inputText id="posicionEvaluador" value="#{edeEvalController.selected.posicionEvaluador}" title="#{bundle.CreateEdeEvalTitle_posicionEvaluador}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_nombreEvaluado}" for="nombreEvaluado" />
+                        <p:inputText id="nombreEvaluado" value="#{edeEvalController.selected.nombreEvaluado}" title="#{bundle.CreateEdeEvalTitle_nombreEvaluado}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_posicionEvaluado}" for="posicionEvaluado" />
+                        <p:inputText id="posicionEvaluado" value="#{edeEvalController.selected.posicionEvaluado}" title="#{bundle.CreateEdeEvalTitle_posicionEvaluado}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_tipoEmpleado}" for="tipoEmpleado" />
+                        <p:inputText id="tipoEmpleado" value="#{edeEvalController.selected.tipoEmpleado}" title="#{bundle.CreateEdeEvalTitle_tipoEmpleado}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_fechaIngresoEvaluado}" for="fechaIngresoEvaluado" />
+                        <p:calendar id="fechaIngresoEvaluado" pattern="MM/dd/yyyy" value="#{edeEvalController.selected.fechaIngresoEvaluado}" title="#{bundle.EditEdeEvalTitle_fechaIngresoEvaluado}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numDefiObjetivos}" for="numDefiObjetivos" />
+                        <p:inputText id="numDefiObjetivos" value="#{edeEvalController.selected.numDefiObjetivos}" title="#{bundle.CreateEdeEvalTitle_numDefiObjetivos}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numDefiCompromisos}" for="numDefiCompromisos" />
+                        <p:inputText id="numDefiCompromisos" value="#{edeEvalController.selected.numDefiCompromisos}" title="#{bundle.CreateEdeEvalTitle_numDefiCompromisos}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_estadoDefi}" for="estadoDefi" />
+                        <p:inputText id="estadoDefi" value="#{edeEvalController.selected.estadoDefi}" title="#{bundle.CreateEdeEvalTitle_estadoDefi}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numReIntObjetivos}" for="numReIntObjetivos" />
+                        <p:inputText id="numReIntObjetivos" value="#{edeEvalController.selected.numReIntObjetivos}" title="#{bundle.CreateEdeEvalTitle_numReIntObjetivos}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numReIntCompromisos}" for="numReIntCompromisos" />
+                        <p:inputText id="numReIntCompromisos" value="#{edeEvalController.selected.numReIntCompromisos}" title="#{bundle.CreateEdeEvalTitle_numReIntCompromisos}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_estadoReInt}" for="estadoReInt" />
+                        <p:inputText id="estadoReInt" value="#{edeEvalController.selected.estadoReInt}" title="#{bundle.CreateEdeEvalTitle_estadoReInt}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numReFinObjetivos}" for="numReFinObjetivos" />
+                        <p:inputText id="numReFinObjetivos" value="#{edeEvalController.selected.numReFinObjetivos}" title="#{bundle.CreateEdeEvalTitle_numReFinObjetivos}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numReFinCompromisos}" for="numReFinCompromisos" />
+                        <p:inputText id="numReFinCompromisos" value="#{edeEvalController.selected.numReFinCompromisos}" title="#{bundle.CreateEdeEvalTitle_numReFinCompromisos}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_estadoEval}" for="estadoEval" />
+                        <p:inputText id="estadoEval" value="#{edeEvalController.selected.estadoEval}" title="#{bundle.CreateEdeEvalTitle_estadoEval}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_estadoCompe}" for="estadoCompe" />
+                        <p:inputText id="estadoCompe" value="#{edeEvalController.selected.estadoCompe}" title="#{bundle.CreateEdeEvalTitle_estadoCompe}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numEvaForta}" for="numEvaForta" />
+                        <p:inputText id="numEvaForta" value="#{edeEvalController.selected.numEvaForta}" title="#{bundle.CreateEdeEvalTitle_numEvaForta}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_numEvaOpor}" for="numEvaOpor" />
+                        <p:inputText id="numEvaOpor" value="#{edeEvalController.selected.numEvaOpor}" title="#{bundle.CreateEdeEvalTitle_numEvaOpor}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_estadoEvaForta}" for="estadoEvaForta" />
+                        <p:inputText id="estadoEvaForta" value="#{edeEvalController.selected.estadoEvaForta}" title="#{bundle.CreateEdeEvalTitle_estadoEvaForta}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_revIntermediaCompromiso}" for="revIntermediaCompromiso" />
+                        <p:inputText id="revIntermediaCompromiso" value="#{edeEvalController.selected.revIntermediaCompromiso}" title="#{bundle.CreateEdeEvalTitle_revIntermediaCompromiso}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_revIntermediaExpectativa}" for="revIntermediaExpectativa" />
+                        <p:inputText id="revIntermediaExpectativa" value="#{edeEvalController.selected.revIntermediaExpectativa}" title="#{bundle.CreateEdeEvalTitle_revIntermediaExpectativa}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_revFinalCompromiso}" for="revFinalCompromiso" />
+                        <p:inputText id="revFinalCompromiso" value="#{edeEvalController.selected.revFinalCompromiso}" title="#{bundle.CreateEdeEvalTitle_revFinalCompromiso}" />
+                        <p:outputLabel value="#{bundle.CreateEdeEvalLabel_revFinalExpectativa}" for="revFinalExpectativa" />
+                        <p:inputText id="revFinalExpectativa" value="#{edeEvalController.selected.revFinalExpectativa}" title="#{bundle.CreateEdeEvalTitle_revFinalExpectativa}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edeEvalController.create}" value="#{bundle.Save}" update="display,:EdeEvalListForm:datalist,:growl" oncomplete="handleSubmit(args,'EdeEvalCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdeEvalCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

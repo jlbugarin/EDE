@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeCompromisosViewDlg" widgetVar="EdeCompromisosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEdeCompromisosTitle}">
+            <h:form id="EdeCompromisosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeCompromisosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_edeCompromisosPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.edeCompromisosPK.idEvaluacion}" title="#{bundle.ViewEdeCompromisosTitle_edeCompromisosPK_idEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_edeCompromisosPK_item}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.edeCompromisosPK.item}" title="#{bundle.ViewEdeCompromisosTitle_edeCompromisosPK_item}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_descripcion}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.descripcion}" title="#{bundle.ViewEdeCompromisosTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_periodo}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.periodo}" title="#{bundle.ViewEdeCompromisosTitle_periodo}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_fechaFinal}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.fechaFinal}" title="#{bundle.ViewEdeCompromisosTitle_fechaFinal}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_codNivelEva}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.codNivelEva}" title="#{bundle.ViewEdeCompromisosTitle_codNivelEva}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_comentarioEvaluacion}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.comentarioEvaluacion}" title="#{bundle.ViewEdeCompromisosTitle_comentarioEvaluacion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EdeCompromisosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

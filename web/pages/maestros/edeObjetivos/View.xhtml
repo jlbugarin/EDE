@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdeObjetivosViewDlg" widgetVar="EdeObjetivosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEdeObjetivosTitle}">
+            <h:form id="EdeObjetivosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edeObjetivosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.edeObjetivosPK.idEvaluacion}" title="#{bundle.ViewEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_edeObjetivosPK_item}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.edeObjetivosPK.item}" title="#{bundle.ViewEdeObjetivosTitle_edeObjetivosPK_item}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_codCategoria}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.codCategoria}" title="#{bundle.ViewEdeObjetivosTitle_codCategoria}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_porPeso}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.porPeso}" title="#{bundle.ViewEdeObjetivosTitle_porPeso}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_definicionObjetivo}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.definicionObjetivo}" title="#{bundle.ViewEdeObjetivosTitle_definicionObjetivo}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_nombreIndicador}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.nombreIndicador}" title="#{bundle.ViewEdeObjetivosTitle_nombreIndicador}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_unidad}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.unidad}" title="#{bundle.ViewEdeObjetivosTitle_unidad}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_tipo}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.tipo}" title="#{bundle.ViewEdeObjetivosTitle_tipo}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_fuenteValidacion}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.fuenteValidacion}" title="#{bundle.ViewEdeObjetivosTitle_fuenteValidacion}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_metaMinimo}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.metaMinimo}" title="#{bundle.ViewEdeObjetivosTitle_metaMinimo}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_metaMaximo}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.metaMaximo}" title="#{bundle.ViewEdeObjetivosTitle_metaMaximo}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_presiciones}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.presiciones}" title="#{bundle.ViewEdeObjetivosTitle_presiciones}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMinMeta}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.escalaMinMeta}" title="#{bundle.ViewEdeObjetivosTitle_escalaMinMeta}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMeta}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.escalaMeta}" title="#{bundle.ViewEdeObjetivosTitle_escalaMeta}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMaxMeta}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.escalaMaxMeta}" title="#{bundle.ViewEdeObjetivosTitle_escalaMaxMeta}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_porAvanceRevIntermedia}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.porAvanceRevIntermedia}" title="#{bundle.ViewEdeObjetivosTitle_porAvanceRevIntermedia}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_comentarioRevIntermedia}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.comentarioRevIntermedia}" title="#{bundle.ViewEdeObjetivosTitle_comentarioRevIntermedia}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_indRevObjetivosIntermedia}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.indRevObjetivosIntermedia}" title="#{bundle.ViewEdeObjetivosTitle_indRevObjetivosIntermedia}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_porAvanceRevFinal}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.porAvanceRevFinal}" title="#{bundle.ViewEdeObjetivosTitle_porAvanceRevFinal}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_comentarioRevFinal}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.comentarioRevFinal}" title="#{bundle.ViewEdeObjetivosTitle_comentarioRevFinal}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_indRevObjetivosFinal}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.indRevObjetivosFinal}" title="#{bundle.ViewEdeObjetivosTitle_indRevObjetivosFinal}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_resultado}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.resultado}" title="#{bundle.ViewEdeObjetivosTitle_resultado}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_porCumplimiento}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.porCumplimiento}" title="#{bundle.ViewEdeObjetivosTitle_porCumplimiento}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_logroporPeso}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.logroporPeso}" title="#{bundle.ViewEdeObjetivosTitle_logroporPeso}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_comentarioEvaluacion}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.comentarioEvaluacion}" title="#{bundle.ViewEdeObjetivosTitle_comentarioEvaluacion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EdeObjetivosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
