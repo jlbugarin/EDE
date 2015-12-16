@@ -11,7 +11,7 @@
         <p:dialog id="EdeObjetivosEditDlg" widgetVar="EdeObjetivosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEdeObjetivosTitle}">
             <h:form id="EdeObjetivosEditForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{edeObjetivosController.selected != null}">
+                    <p:panelGrid columns="4" rendered="#{edeObjetivosController.selected != null}">
                         <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_edeObjetivosPK_item}" for="edeObjetivosPK_item" />
                         <p:inputText id="edeObjetivosPK_item" value="#{edeObjetivosController.selected.edeObjetivosPK.item}" title="#{bundle.EditEdeObjetivosTitle_edeObjetivosPK_item}" required="true" requiredMessage="#{bundle.EditEdeObjetivosRequiredMessage_edeObjetivosPK_item}"/>
                         <p:outputLabel value="#{bundle.EditEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}" for="edeObjetivosPK_idEvaluacion" />

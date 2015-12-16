@@ -11,7 +11,7 @@
         <p:dialog id="EdeEvalCreateDlg" widgetVar="EdeEvalCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEdeEvalTitle}">
             <h:form id="EdeEvalCreateForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{edeEvalController.selected != null}">
+                    <p:panelGrid columns="4" rendered="#{edeEvalController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_rolEvaluacion}" for="edeEvalPK_rolEvaluacion" />
                         <p:inputText id="edeEvalPK_rolEvaluacion" value="#{edeEvalController.selected.edeEvalPK.rolEvaluacion}" title="#{bundle.CreateEdeEvalTitle_edeEvalPK_rolEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeEvalRequiredMessage_edeEvalPK_rolEvaluacion}"/>
                         <p:outputLabel value="#{bundle.CreateEdeEvalLabel_edeEvalPK_tipoEvaluacion}" for="edeEvalPK_tipoEvaluacion" />

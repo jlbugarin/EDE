@@ -32,11 +32,19 @@
                             <p:menuitem value="EdeObjetivos" outcome="/pages/maestros/edeObjetivos/List.xhtml" />
                             <p:menuitem value="EdeOportunidades" outcome="/pages/maestros/edeOportunidades/List.xhtml" />
                         </p:submenu>
-                        <p:submenu rendered="#{loginManagedBean.signed==true}"  label="#{bundle.Evaluacion}" >
-                            <p:menuitem value="Objetivos" outcome="/pages/maestros/userRoles/List.xhtml" />
-                            <p:menuitem value="Compromisos" outcome="/pages/maestros/users/List.xhtml" />
-                        </p:submenu>
-                       
+                        <p:submenu rendered="#{loginManagedBean.signed==true}"  label="#{bundle.Maestras}" >
+                            <p:menuitem value="EdemCategoria" outcome="/pages/maestros/edemCategoria/List.xhtml" />
+                            <p:menuitem value="EdemCompetencia" outcome="/pages/maestros/edemCompetencia/List.xhtml" />
+                            <p:menuitem value="EdemEstado" outcome="/pages/maestros/edemEstado/List.xhtml" />
+                            <p:menuitem value="EdemEvaluadosConf" outcome="/pages/maestros/edemEvaluadosConf/List.xhtml" />
+                            <p:menuitem value="EdemNivelEval" outcome="/pages/maestros/edemNivelEval/List.xhtml" />
+                            <p:menuitem value="EdemPeriodo" outcome="/pages/maestros/edemPeriodo/List.xhtml" />
+                            <p:menuitem value="EdemRolEval" outcome="/pages/maestros/edemRolEval/List.xhtml" />
+                            <p:menuitem value="EdemTipoeva" outcome="/pages/maestros/edemTipoeva/List.xhtml" />
+                            <p:menuitem value="EdemTipotrabajador" outcome="/pages/maestros/edemTipotrabajador/List.xhtml" />
+                            <p:menuitem value="EdemUnidad" outcome="/pages/maestros/edemUnidad/List.xhtml" />
+                            <p:menuitem value="EdenNivel" outcome="/pages/maestros/edenNivel/List.xhtml" />
+                        </p:submenu>                       
                         <f:facet name="options">
                             <p:outputLabel style="margin-right:10px" value="Bienvenido "/>
                             <p:outputLabel style="margin-right:10px" value="#{loginManagedBean.usuario}"/>
