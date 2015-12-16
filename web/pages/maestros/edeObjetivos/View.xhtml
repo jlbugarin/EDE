@@ -12,10 +12,10 @@
             <h:form id="EdeObjetivosViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{edeObjetivosController.selected != null}">
-                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}"/>
-                        <h:outputText value="#{edeObjetivosController.selected.edeObjetivosPK.idEvaluacion}" title="#{bundle.ViewEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}"/>
                         <h:outputText value="#{bundle.ViewEdeObjetivosLabel_edeObjetivosPK_item}"/>
                         <h:outputText value="#{edeObjetivosController.selected.edeObjetivosPK.item}" title="#{bundle.ViewEdeObjetivosTitle_edeObjetivosPK_item}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.edeObjetivosPK.idEvaluacion}" title="#{bundle.ViewEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}"/>
                         <h:outputText value="#{bundle.ViewEdeObjetivosLabel_codCategoria}"/>
                         <h:outputText value="#{edeObjetivosController.selected.codCategoria}" title="#{bundle.ViewEdeObjetivosTitle_codCategoria}"/>
                         <h:outputText value="#{bundle.ViewEdeObjetivosLabel_porPeso}"/>
@@ -42,6 +42,12 @@
                         <h:outputText value="#{edeObjetivosController.selected.escalaMeta}" title="#{bundle.ViewEdeObjetivosTitle_escalaMeta}"/>
                         <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMaxMeta}"/>
                         <h:outputText value="#{edeObjetivosController.selected.escalaMaxMeta}" title="#{bundle.ViewEdeObjetivosTitle_escalaMaxMeta}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMinMetaTexto}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.escalaMinMetaTexto}" title="#{bundle.ViewEdeObjetivosTitle_escalaMinMetaTexto}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMetaTexto}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.escalaMetaTexto}" title="#{bundle.ViewEdeObjetivosTitle_escalaMetaTexto}"/>
+                        <h:outputText value="#{bundle.ViewEdeObjetivosLabel_escalaMaxMetaTexto}"/>
+                        <h:outputText value="#{edeObjetivosController.selected.escalaMaxMetaTexto}" title="#{bundle.ViewEdeObjetivosTitle_escalaMaxMetaTexto}"/>
                         <h:outputText value="#{bundle.ViewEdeObjetivosLabel_porAvanceRevIntermedia}"/>
                         <h:outputText value="#{edeObjetivosController.selected.porAvanceRevIntermedia}" title="#{bundle.ViewEdeObjetivosTitle_porAvanceRevIntermedia}"/>
                         <h:outputText value="#{bundle.ViewEdeObjetivosLabel_comentarioRevIntermedia}"/>

@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeObjetivos;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeObjetivosFacade extends AbstractFacade<EdeObjetivos> {

@@ -29,15 +29,15 @@
 
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_edeObjetivosPK_item}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.edeObjetivosPK.item}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}"/>
                             </f:facet>
                             <h:outputText value="#{item.edeObjetivosPK.idEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_edeObjetivosPK_item}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeObjetivosPK.item}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -116,6 +116,24 @@
                                 <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMaxMeta}"/>
                             </f:facet>
                             <h:outputText value="#{item.escalaMaxMeta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMinMetaTexto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaMinMetaTexto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMetaTexto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaMetaTexto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeObjetivosTitle_escalaMaxMetaTexto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.escalaMaxMetaTexto}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

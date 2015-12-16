@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Embeddable
 public class EdeFortalezasPK implements Serializable {

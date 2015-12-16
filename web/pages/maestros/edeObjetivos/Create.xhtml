@@ -12,10 +12,10 @@
             <h:form id="EdeObjetivosCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{edeObjetivosController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}" for="edeObjetivosPK_idEvaluacion" />
-                        <p:inputText id="edeObjetivosPK_idEvaluacion" value="#{edeObjetivosController.selected.edeObjetivosPK.idEvaluacion}" title="#{bundle.CreateEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeObjetivosRequiredMessage_edeObjetivosPK_idEvaluacion}"/>
                         <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_edeObjetivosPK_item}" for="edeObjetivosPK_item" />
                         <p:inputText id="edeObjetivosPK_item" value="#{edeObjetivosController.selected.edeObjetivosPK.item}" title="#{bundle.CreateEdeObjetivosTitle_edeObjetivosPK_item}" required="true" requiredMessage="#{bundle.CreateEdeObjetivosRequiredMessage_edeObjetivosPK_item}"/>
+                        <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_edeObjetivosPK_idEvaluacion}" for="edeObjetivosPK_idEvaluacion" />
+                        <p:inputText id="edeObjetivosPK_idEvaluacion" value="#{edeObjetivosController.selected.edeObjetivosPK.idEvaluacion}" title="#{bundle.CreateEdeObjetivosTitle_edeObjetivosPK_idEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdeObjetivosRequiredMessage_edeObjetivosPK_idEvaluacion}"/>
                         <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_codCategoria}" for="codCategoria" />
                         <p:inputText id="codCategoria" value="#{edeObjetivosController.selected.codCategoria}" title="#{bundle.CreateEdeObjetivosTitle_codCategoria}" />
                         <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_porPeso}" for="porPeso" />
@@ -42,6 +42,12 @@
                         <p:inputText id="escalaMeta" value="#{edeObjetivosController.selected.escalaMeta}" title="#{bundle.CreateEdeObjetivosTitle_escalaMeta}" />
                         <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_escalaMaxMeta}" for="escalaMaxMeta" />
                         <p:inputText id="escalaMaxMeta" value="#{edeObjetivosController.selected.escalaMaxMeta}" title="#{bundle.CreateEdeObjetivosTitle_escalaMaxMeta}" />
+                        <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_escalaMinMetaTexto}" for="escalaMinMetaTexto" />
+                        <p:inputText id="escalaMinMetaTexto" value="#{edeObjetivosController.selected.escalaMinMetaTexto}" title="#{bundle.CreateEdeObjetivosTitle_escalaMinMetaTexto}" />
+                        <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_escalaMetaTexto}" for="escalaMetaTexto" />
+                        <p:inputText id="escalaMetaTexto" value="#{edeObjetivosController.selected.escalaMetaTexto}" title="#{bundle.CreateEdeObjetivosTitle_escalaMetaTexto}" />
+                        <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_escalaMaxMetaTexto}" for="escalaMaxMetaTexto" />
+                        <p:inputText id="escalaMaxMetaTexto" value="#{edeObjetivosController.selected.escalaMaxMetaTexto}" title="#{bundle.CreateEdeObjetivosTitle_escalaMaxMetaTexto}" />
                         <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_porAvanceRevIntermedia}" for="porAvanceRevIntermedia" />
                         <p:inputText id="porAvanceRevIntermedia" value="#{edeObjetivosController.selected.porAvanceRevIntermedia}" title="#{bundle.CreateEdeObjetivosTitle_porAvanceRevIntermedia}" />
                         <p:outputLabel value="#{bundle.CreateEdeObjetivosLabel_comentarioRevIntermedia}" for="comentarioRevIntermedia" />

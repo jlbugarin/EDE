@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeCompetencias;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeCompetenciasFacade extends AbstractFacade<EdeCompetencias> {

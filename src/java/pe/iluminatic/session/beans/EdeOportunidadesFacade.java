@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeOportunidades;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeOportunidadesFacade extends AbstractFacade<EdeOportunidades> {

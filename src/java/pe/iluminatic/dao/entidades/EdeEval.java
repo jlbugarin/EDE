@@ -19,10 +19,10 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Entity
-@Table(name = "EDE_EVAL")
+@Table(name = "ede_eval")
 @NamedQueries({
     @NamedQuery(name = "EdeEval.findAll", query = "SELECT e FROM EdeEval e"),
     @NamedQuery(name = "EdeEval.findByIdEvaluacion", query = "SELECT e FROM EdeEval e WHERE e.edeEvalPK.idEvaluacion = :idEvaluacion"),
@@ -36,6 +36,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "EdeEval.findByPosicionEvaluado", query = "SELECT e FROM EdeEval e WHERE e.posicionEvaluado = :posicionEvaluado"),
     @NamedQuery(name = "EdeEval.findByTipoEmpleado", query = "SELECT e FROM EdeEval e WHERE e.tipoEmpleado = :tipoEmpleado"),
     @NamedQuery(name = "EdeEval.findByFechaIngresoEvaluado", query = "SELECT e FROM EdeEval e WHERE e.fechaIngresoEvaluado = :fechaIngresoEvaluado"),
+    @NamedQuery(name = "EdeEval.findByIndLiderazgo", query = "SELECT e FROM EdeEval e WHERE e.indLiderazgo = :indLiderazgo"),
     @NamedQuery(name = "EdeEval.findByNumDefiObjetivos", query = "SELECT e FROM EdeEval e WHERE e.numDefiObjetivos = :numDefiObjetivos"),
     @NamedQuery(name = "EdeEval.findByNumDefiCompromisos", query = "SELECT e FROM EdeEval e WHERE e.numDefiCompromisos = :numDefiCompromisos"),
     @NamedQuery(name = "EdeEval.findByEstadoDefi", query = "SELECT e FROM EdeEval e WHERE e.estadoDefi = :estadoDefi"),
@@ -75,6 +76,8 @@ public class EdeEval implements Serializable {
     @Column(name = "Fecha_Ingreso_Evaluado")
     @Temporal(TemporalType.DATE)
     private Date fechaIngresoEvaluado;
+    @Column(name = "ind_Liderazgo")
+    private Character indLiderazgo;
     @Column(name = "Num_Defi_Objetivos")
     private Integer numDefiObjetivos;
     @Column(name = "Num_Defi_Compromisos")
@@ -184,6 +187,14 @@ public class EdeEval implements Serializable {
 
     public void setFechaIngresoEvaluado(Date fechaIngresoEvaluado) {
         this.fechaIngresoEvaluado = fechaIngresoEvaluado;
+    }
+
+    public Character getIndLiderazgo() {
+        return indLiderazgo;
+    }
+
+    public void setIndLiderazgo(Character indLiderazgo) {
+        this.indLiderazgo = indLiderazgo;
     }
 
     public Integer getNumDefiObjetivos() {

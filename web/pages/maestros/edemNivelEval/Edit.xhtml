@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdemNivelEvalEditDlg" widgetVar="EdemNivelEvalEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEdemNivelEvalTitle}">
+            <h:form id="EdemNivelEvalEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edemNivelEvalController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEdemNivelEvalLabel_codRespuesta}" for="codRespuesta" />
+                        <p:inputText id="codRespuesta" value="#{edemNivelEvalController.selected.codRespuesta}" title="#{bundle.EditEdemNivelEvalTitle_codRespuesta}" required="true" requiredMessage="#{bundle.EditEdemNivelEvalRequiredMessage_codRespuesta}"/>
+                        <p:outputLabel value="#{bundle.EditEdemNivelEvalLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edemNivelEvalController.selected.descripcion}" title="#{bundle.EditEdemNivelEvalTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.EditEdemNivelEvalLabel_requiereComp}" for="requiereComp" />
+                        <p:inputText id="requiereComp" value="#{edemNivelEvalController.selected.requiereComp}" title="#{bundle.EditEdemNivelEvalTitle_requiereComp}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edemNivelEvalController.update}" value="#{bundle.Save}" update="display,:EdemNivelEvalListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EdemNivelEvalEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdemNivelEvalEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

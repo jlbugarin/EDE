@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdemTipoevaEditDlg" widgetVar="EdemTipoevaEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEdemTipoevaTitle}">
+            <h:form id="EdemTipoevaEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edemTipoevaController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEdemTipoevaLabel_tipoEvaluacion}" for="tipoEvaluacion" />
+                        <p:inputText id="tipoEvaluacion" value="#{edemTipoevaController.selected.tipoEvaluacion}" title="#{bundle.EditEdemTipoevaTitle_tipoEvaluacion}" required="true" requiredMessage="#{bundle.EditEdemTipoevaRequiredMessage_tipoEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.EditEdemTipoevaLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edemTipoevaController.selected.descripcion}" title="#{bundle.EditEdemTipoevaTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.EditEdemTipoevaLabel_periodo}" for="periodo" />
+                        <p:inputText id="periodo" value="#{edemTipoevaController.selected.periodo}" title="#{bundle.EditEdemTipoevaTitle_periodo}" />
+                        <p:outputLabel value="#{bundle.EditEdemTipoevaLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{edemTipoevaController.selected.estado}" title="#{bundle.EditEdemTipoevaTitle_estado}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edemTipoevaController.update}" value="#{bundle.Save}" update="display,:EdemTipoevaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EdemTipoevaEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdemTipoevaEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

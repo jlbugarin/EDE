@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeCompromisos;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeCompromisosFacade extends AbstractFacade<EdeCompromisos> {

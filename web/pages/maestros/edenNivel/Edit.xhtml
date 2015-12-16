@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdenNivelEditDlg" widgetVar="EdenNivelEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEdenNivelTitle}">
+            <h:form id="EdenNivelEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edenNivelController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEdenNivelLabel_codNivelEva}" for="codNivelEva" />
+                        <p:inputText id="codNivelEva" value="#{edenNivelController.selected.codNivelEva}" title="#{bundle.EditEdenNivelTitle_codNivelEva}" required="true" requiredMessage="#{bundle.EditEdenNivelRequiredMessage_codNivelEva}"/>
+                        <p:outputLabel value="#{bundle.EditEdenNivelLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edenNivelController.selected.descripcion}" title="#{bundle.EditEdenNivelTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.EditEdenNivelLabel_requiereComp}" for="requiereComp" />
+                        <p:inputText id="requiereComp" value="#{edenNivelController.selected.requiereComp}" title="#{bundle.EditEdenNivelTitle_requiereComp}" />
+                        <p:outputLabel value="#{bundle.EditEdenNivelLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{edenNivelController.selected.estado}" title="#{bundle.EditEdenNivelTitle_estado}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edenNivelController.update}" value="#{bundle.Save}" update="display,:EdenNivelListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EdenNivelEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdenNivelEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

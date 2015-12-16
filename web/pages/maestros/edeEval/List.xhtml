@@ -29,6 +29,12 @@
 
                         <p:column>
                             <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_idEvaluacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edeEvalPK.idEvaluacion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_codEvaluador}"/>
                             </f:facet>
                             <h:outputText value="#{item.edeEvalPK.codEvaluador}"/>
@@ -50,12 +56,6 @@
                                 <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_tipoEvaluacion}"/>
                             </f:facet>
                             <h:outputText value="#{item.edeEvalPK.tipoEvaluacion}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListEdeEvalTitle_edeEvalPK_idEvaluacion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.edeEvalPK.idEvaluacion}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -94,6 +94,12 @@
                             <h:outputText value="#{item.fechaIngresoEvaluado}">
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
                             </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdeEvalTitle_indLiderazgo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indLiderazgo}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

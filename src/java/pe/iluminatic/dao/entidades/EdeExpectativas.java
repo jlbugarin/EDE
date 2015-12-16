@@ -16,10 +16,10 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Entity
-@Table(name = "EDE_EXPECTATIVAS")
+@Table(name = "ede_expectativas")
 @NamedQueries({
     @NamedQuery(name = "EdeExpectativas.findAll", query = "SELECT e FROM EdeExpectativas e"),
     @NamedQuery(name = "EdeExpectativas.findByIdEvaluacion", query = "SELECT e FROM EdeExpectativas e WHERE e.edeExpectativasPK.idEvaluacion = :idEvaluacion"),

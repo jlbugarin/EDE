@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeExpectativas;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeExpectativasFacade extends AbstractFacade<EdeExpectativas> {

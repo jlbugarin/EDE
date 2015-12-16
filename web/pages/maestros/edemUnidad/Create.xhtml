@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdemUnidadCreateDlg" widgetVar="EdemUnidadCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEdemUnidadTitle}">
+            <h:form id="EdemUnidadCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edemUnidadController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEdemUnidadLabel_unidad}" for="unidad" />
+                        <p:inputText id="unidad" value="#{edemUnidadController.selected.unidad}" title="#{bundle.CreateEdemUnidadTitle_unidad}" required="true" requiredMessage="#{bundle.CreateEdemUnidadRequiredMessage_unidad}"/>
+                        <p:outputLabel value="#{bundle.CreateEdemUnidadLabel_clasificacion}" for="clasificacion" />
+                        <p:inputText id="clasificacion" value="#{edemUnidadController.selected.clasificacion}" title="#{bundle.CreateEdemUnidadTitle_clasificacion}" />
+                        <p:outputLabel value="#{bundle.CreateEdemUnidadLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edemUnidadController.selected.descripcion}" title="#{bundle.CreateEdemUnidadTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.CreateEdemUnidadLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{edemUnidadController.selected.estado}" title="#{bundle.CreateEdemUnidadTitle_estado}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edemUnidadController.create}" value="#{bundle.Save}" update="display,:EdemUnidadListForm:datalist,:growl" oncomplete="handleSubmit(args,'EdemUnidadCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdemUnidadCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

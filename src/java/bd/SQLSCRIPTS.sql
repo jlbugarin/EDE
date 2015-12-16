@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS `EDE_EVAL` (
   `Posicion_Evaluado` VARCHAR(45) NULL,
   `Tipo_Empleado` CHAR(2) NULL,
   `Fecha_Ingreso_Evaluado` DATE NULL,
+  `ind_Liderazgo` CHAR(1) NULL DEFAULT 'N' COMMENT 'S = Si\nN = No',
   `Num_Defi_Objetivos` INT NULL,
   `Num_Defi_Compromisos` INT NULL,
   `Estado_Defi` CHAR(2) NULL,
@@ -105,6 +106,9 @@ CREATE TABLE IF NOT EXISTS `EDE_OBJETIVOS` (
   `Escala_Min_Meta` DOUBLE NULL,
   `Escala_Meta` DOUBLE NULL,
   `Escala_Max_Meta` DOUBLE NULL,
+  `Escala_Min_Meta_Texto` VARCHAR(250) NULL,
+  `Escala_Meta_Texto` VARCHAR(250) NULL,
+  `Escala_Max_Meta_Texto` VARCHAR(250) NULL,
   `Por_Avance_Rev_Intermedia` DOUBLE NULL,
   `Comentario_Rev_Intermedia` VARCHAR(250) NULL,
   `ind_Rev_Objetivos_Intermedia` CHAR(1) NULL,
@@ -184,4 +188,128 @@ CREATE TABLE IF NOT EXISTS `EDE_OPORTUNIDADES` (
   `Item` INT NOT NULL,
   `Descripcion` VARCHAR(250) NULL,
   PRIMARY KEY (`Id_Evaluacion`, `Item`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_TIPOEVA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_TIPOEVA` (
+  `Tipo_Evaluacion` CHAR(4) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  `Periodo` CHAR(4) NULL,
+  `Estado` CHAR(1) NULL,
+  PRIMARY KEY (`Tipo_Evaluacion`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = dec8;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_CATEGORIA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_CATEGORIA` (
+  `cod_Categoria` CHAR(2) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  `Estado` CHAR(1) NULL,
+  PRIMARY KEY (`cod_Categoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_UNIDAD`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_UNIDAD` (
+  `Unidad` CHAR(3) NOT NULL,
+  `Clasificacion` CHAR(2) NULL DEFAULT 'CT' COMMENT 'CT = Cuantitativo\nCL = Cualitativo',
+  `Descripcion` VARCHAR(100) NULL,
+  `Estado` CHAR(1) NULL,
+  PRIMARY KEY (`Unidad`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_PERIODO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_PERIODO` (
+  `Periodo` CHAR(2) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  `Estado` CHAR(1) NULL DEFAULT 'A' COMMENT 'A = Activo\nI = Inactivo',
+  PRIMARY KEY (`Periodo`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_ESTADO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_ESTADO` (
+  `Estado` CHAR(2) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  PRIMARY KEY (`Estado`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_TIPOTRABAJADOR`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_TIPOTRABAJADOR` (
+  `Tipo_Empleado` CHAR(2) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  `Estado` CHAR(1) NULL DEFAULT 'A' COMMENT 'A = Activo\nI = Inactivo',
+  PRIMARY KEY (`Tipo_Empleado`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEN_NIVEL`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEN_NIVEL` (
+  `cod_Nivel_Eva` CHAR(2) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  `Requiere_Comp` CHAR(1) NULL DEFAULT 'S' COMMENT 'S = SI\nN = NO',
+  `Estado` CHAR(1) NULL DEFAULT 'A' COMMENT 'A = Activo\nI = Inactivo',
+  PRIMARY KEY (`cod_Nivel_Eva`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_COMPETENCIA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_COMPETENCIA` (
+  `cod_Pregunta` CHAR(4) NOT NULL,
+  `Descripcion` VARCHAR(250) NULL,
+  PRIMARY KEY (`cod_Pregunta`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_NIVEL_EVAL`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_NIVEL_EVAL` (
+  `cod_Respuesta` CHAR(3) NOT NULL,
+  `Descripcion` VARCHAR(250) NULL,
+  `Requiere_Comp` CHAR(2) NULL DEFAULT 'OB' COMMENT 'OB = Obligatorio\nOP = Opcional',
+  PRIMARY KEY (`cod_Respuesta`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_ROL_EVAL`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_ROL_EVAL` (
+  `Rol_Evaluacion` CHAR(3) NOT NULL,
+  `Descripcion` VARCHAR(100) NULL,
+  `Estado` CHAR(1) NULL DEFAULT 'A' COMMENT 'A = Activo\nI = Inactivo',
+  PRIMARY KEY (`Rol_Evaluacion`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`EDEM_EVALUADOS_CONF`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EDEM_EVALUADOS_CONF` (
+  `Tipo_Evaluacion` CHAR(4) NOT NULL,
+  `Cod_Evaluado` CHAR(8) NOT NULL,
+  `Min_Compromisos` INT NULL,
+  `Aplica_Expectativas` CHAR(1) NULL DEFAULT 'N' COMMENT 'S = Si\nN= No',
+  PRIMARY KEY (`Cod_Evaluado`, `Tipo_Evaluacion`))
 ENGINE = InnoDB;

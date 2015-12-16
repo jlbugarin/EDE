@@ -16,10 +16,10 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Entity
-@Table(name = "EDE_OBJETIVOS")
+@Table(name = "ede_objetivos")
 @NamedQueries({
     @NamedQuery(name = "EdeObjetivos.findAll", query = "SELECT e FROM EdeObjetivos e"),
     @NamedQuery(name = "EdeObjetivos.findByIdEvaluacion", query = "SELECT e FROM EdeObjetivos e WHERE e.edeObjetivosPK.idEvaluacion = :idEvaluacion"),
@@ -37,6 +37,9 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "EdeObjetivos.findByEscalaMinMeta", query = "SELECT e FROM EdeObjetivos e WHERE e.escalaMinMeta = :escalaMinMeta"),
     @NamedQuery(name = "EdeObjetivos.findByEscalaMeta", query = "SELECT e FROM EdeObjetivos e WHERE e.escalaMeta = :escalaMeta"),
     @NamedQuery(name = "EdeObjetivos.findByEscalaMaxMeta", query = "SELECT e FROM EdeObjetivos e WHERE e.escalaMaxMeta = :escalaMaxMeta"),
+    @NamedQuery(name = "EdeObjetivos.findByEscalaMinMetaTexto", query = "SELECT e FROM EdeObjetivos e WHERE e.escalaMinMetaTexto = :escalaMinMetaTexto"),
+    @NamedQuery(name = "EdeObjetivos.findByEscalaMetaTexto", query = "SELECT e FROM EdeObjetivos e WHERE e.escalaMetaTexto = :escalaMetaTexto"),
+    @NamedQuery(name = "EdeObjetivos.findByEscalaMaxMetaTexto", query = "SELECT e FROM EdeObjetivos e WHERE e.escalaMaxMetaTexto = :escalaMaxMetaTexto"),
     @NamedQuery(name = "EdeObjetivos.findByPorAvanceRevIntermedia", query = "SELECT e FROM EdeObjetivos e WHERE e.porAvanceRevIntermedia = :porAvanceRevIntermedia"),
     @NamedQuery(name = "EdeObjetivos.findByComentarioRevIntermedia", query = "SELECT e FROM EdeObjetivos e WHERE e.comentarioRevIntermedia = :comentarioRevIntermedia"),
     @NamedQuery(name = "EdeObjetivos.findByIndRevObjetivosIntermedia", query = "SELECT e FROM EdeObjetivos e WHERE e.indRevObjetivosIntermedia = :indRevObjetivosIntermedia"),
@@ -84,6 +87,15 @@ public class EdeObjetivos implements Serializable {
     private Double escalaMeta;
     @Column(name = "Escala_Max_Meta")
     private Double escalaMaxMeta;
+    @Size(max = 250)
+    @Column(name = "Escala_Min_Meta_Texto")
+    private String escalaMinMetaTexto;
+    @Size(max = 250)
+    @Column(name = "Escala_Meta_Texto")
+    private String escalaMetaTexto;
+    @Size(max = 250)
+    @Column(name = "Escala_Max_Meta_Texto")
+    private String escalaMaxMetaTexto;
     @Column(name = "Por_Avance_Rev_Intermedia")
     private Double porAvanceRevIntermedia;
     @Size(max = 250)
@@ -229,6 +241,30 @@ public class EdeObjetivos implements Serializable {
 
     public void setEscalaMaxMeta(Double escalaMaxMeta) {
         this.escalaMaxMeta = escalaMaxMeta;
+    }
+
+    public String getEscalaMinMetaTexto() {
+        return escalaMinMetaTexto;
+    }
+
+    public void setEscalaMinMetaTexto(String escalaMinMetaTexto) {
+        this.escalaMinMetaTexto = escalaMinMetaTexto;
+    }
+
+    public String getEscalaMetaTexto() {
+        return escalaMetaTexto;
+    }
+
+    public void setEscalaMetaTexto(String escalaMetaTexto) {
+        this.escalaMetaTexto = escalaMetaTexto;
+    }
+
+    public String getEscalaMaxMetaTexto() {
+        return escalaMaxMetaTexto;
+    }
+
+    public void setEscalaMaxMetaTexto(String escalaMaxMetaTexto) {
+        this.escalaMaxMetaTexto = escalaMaxMetaTexto;
     }
 
     public Double getPorAvanceRevIntermedia() {

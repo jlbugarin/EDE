@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdemRolEvalCreateDlg" widgetVar="EdemRolEvalCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEdemRolEvalTitle}">
+            <h:form id="EdemRolEvalCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edemRolEvalController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEdemRolEvalLabel_rolEvaluacion}" for="rolEvaluacion" />
+                        <p:inputText id="rolEvaluacion" value="#{edemRolEvalController.selected.rolEvaluacion}" title="#{bundle.CreateEdemRolEvalTitle_rolEvaluacion}" required="true" requiredMessage="#{bundle.CreateEdemRolEvalRequiredMessage_rolEvaluacion}"/>
+                        <p:outputLabel value="#{bundle.CreateEdemRolEvalLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{edemRolEvalController.selected.descripcion}" title="#{bundle.CreateEdemRolEvalTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.CreateEdemRolEvalLabel_estado}" for="estado" />
+                        <p:inputText id="estado" value="#{edemRolEvalController.selected.estado}" title="#{bundle.CreateEdemRolEvalTitle_estado}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{edemRolEvalController.create}" value="#{bundle.Save}" update="display,:EdemRolEvalListForm:datalist,:growl" oncomplete="handleSubmit(args,'EdemRolEvalCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EdemRolEvalCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

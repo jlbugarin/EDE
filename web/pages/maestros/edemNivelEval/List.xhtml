@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/pages/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEdemNivelEvalTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="EdemNivelEvalListForm">
+                <p:panel header="#{bundle.ListEdemNivelEvalTitle}">
+                    <p:dataTable id="datalist" value="#{edemNivelEvalController.items}" var="item"
+                                 selectionMode="single" selection="#{edemNivelEvalController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.codRespuesta}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdemNivelEvalTitle_codRespuesta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codRespuesta}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdemNivelEvalTitle_descripcion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.descripcion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEdemNivelEvalTitle_requiereComp}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.requiereComp}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{edemNivelEvalController.prepareCreate}" update=":EdemNivelEvalCreateForm" oncomplete="PF('EdemNivelEvalCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":EdemNivelEvalViewForm" oncomplete="PF('EdemNivelEvalViewDialog').show()" disabled="#{empty edemNivelEvalController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":EdemNivelEvalEditForm" oncomplete="PF('EdemNivelEvalEditDialog').show()" disabled="#{empty edemNivelEvalController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{edemNivelEvalController.destroy}" update=":growl,datalist" disabled="#{empty edemNivelEvalController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

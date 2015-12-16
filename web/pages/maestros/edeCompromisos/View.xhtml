@@ -12,10 +12,10 @@
             <h:form id="EdeCompromisosViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{edeCompromisosController.selected != null}">
-                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_edeCompromisosPK_idEvaluacion}"/>
-                        <h:outputText value="#{edeCompromisosController.selected.edeCompromisosPK.idEvaluacion}" title="#{bundle.ViewEdeCompromisosTitle_edeCompromisosPK_idEvaluacion}"/>
                         <h:outputText value="#{bundle.ViewEdeCompromisosLabel_edeCompromisosPK_item}"/>
                         <h:outputText value="#{edeCompromisosController.selected.edeCompromisosPK.item}" title="#{bundle.ViewEdeCompromisosTitle_edeCompromisosPK_item}"/>
+                        <h:outputText value="#{bundle.ViewEdeCompromisosLabel_edeCompromisosPK_idEvaluacion}"/>
+                        <h:outputText value="#{edeCompromisosController.selected.edeCompromisosPK.idEvaluacion}" title="#{bundle.ViewEdeCompromisosTitle_edeCompromisosPK_idEvaluacion}"/>
                         <h:outputText value="#{bundle.ViewEdeCompromisosLabel_descripcion}"/>
                         <h:outputText value="#{edeCompromisosController.selected.descripcion}" title="#{bundle.ViewEdeCompromisosTitle_descripcion}"/>
                         <h:outputText value="#{bundle.ViewEdeCompromisosLabel_periodo}"/>

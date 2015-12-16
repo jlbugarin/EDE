@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeEval;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeEvalFacade extends AbstractFacade<EdeEval> {

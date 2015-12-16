@@ -12,7 +12,7 @@ import pe.iluminatic.dao.entidades.EdeFortalezas;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Stateless
 public class EdeFortalezasFacade extends AbstractFacade<EdeFortalezas> {

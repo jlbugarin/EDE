@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author jlbugarin
+ * @author JBugarinP
  */
 @Embeddable
 public class EdeEvalPK implements Serializable {

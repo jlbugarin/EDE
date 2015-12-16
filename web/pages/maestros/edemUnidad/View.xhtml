@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EdemUnidadViewDlg" widgetVar="EdemUnidadViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewEdemUnidadTitle}">
+            <h:form id="EdemUnidadViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{edemUnidadController.selected != null}">
+                        <h:outputText value="#{bundle.ViewEdemUnidadLabel_unidad}"/>
+                        <h:outputText value="#{edemUnidadController.selected.unidad}" title="#{bundle.ViewEdemUnidadTitle_unidad}"/>
+                        <h:outputText value="#{bundle.ViewEdemUnidadLabel_clasificacion}"/>
+                        <h:outputText value="#{edemUnidadController.selected.clasificacion}" title="#{bundle.ViewEdemUnidadTitle_clasificacion}"/>
+                        <h:outputText value="#{bundle.ViewEdemUnidadLabel_descripcion}"/>
+                        <h:outputText value="#{edemUnidadController.selected.descripcion}" title="#{bundle.ViewEdemUnidadTitle_descripcion}"/>
+                        <h:outputText value="#{bundle.ViewEdemUnidadLabel_estado}"/>
+                        <h:outputText value="#{edemUnidadController.selected.estado}" title="#{bundle.ViewEdemUnidadTitle_estado}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="EdemUnidadViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
