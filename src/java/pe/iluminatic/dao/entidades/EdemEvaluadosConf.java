@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author JBugarinP
  */
 @Entity
-@Table(name = "edem_evaluados_conf")
+@Table(name = "EDEM_EVALUADOS_CONF")
 @NamedQueries({
     @NamedQuery(name = "EdemEvaluadosConf.findAll", query = "SELECT e FROM EdemEvaluadosConf e"),
     @NamedQuery(name = "EdemEvaluadosConf.findByTipoEvaluacion", query = "SELECT e FROM EdemEvaluadosConf e WHERE e.edemEvaluadosConfPK.tipoEvaluacion = :tipoEvaluacion"),

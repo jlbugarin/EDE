@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
  * @author JBugarinP
  */
 @Entity
-@Table(name = "edem_competencia")
+@Table(name = "EDEM_COMPETENCIA")
 @NamedQueries({
     @NamedQuery(name = "EdemCompetencia.findAll", query = "SELECT e FROM EdemCompetencia e"),
     @NamedQuery(name = "EdemCompetencia.findByCodPregunta", query = "SELECT e FROM EdemCompetencia e WHERE e.codPregunta = :codPregunta"),
